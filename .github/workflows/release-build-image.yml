@@ -69,4 +69,4 @@ jobs:
           tags: ${{ steps.docker-meta.outputs.tags }}
           labels: ${{ steps.docker-meta.outputs.labels }}
           build-args: |
-            HASKELL_VERSION=${{ inputs.ghc-version }}
+            GHC_VERSION=${{ inputs.ghc-version }}
