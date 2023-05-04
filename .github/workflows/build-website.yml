@@ -11,7 +11,7 @@ on:
 
 
 jobs:
-  build-content:
+  hakyll-site-build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
