@@ -13,7 +13,8 @@ on:
           Defaults to the repository name in lowercase.
         default: ""
     outputs:
-      image-tag: ${{ jobs.publish-builder.outputs.image-tag }}
+      image-tag:
+        value: ${{ jobs.publish-builder.outputs.image-tag }}
 
 jobs:
   publish-builder:
