@@ -1,0 +1,7 @@
+name: Run Hakyll build
+description: "Run Hakyll 'site build' command"
+runs:
+  using: docker
+  image: :IMAGE_TAG
+  args:
+    - build
