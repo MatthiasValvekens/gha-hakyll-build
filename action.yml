@@ -1,0 +1,12 @@
+name: Run Hakyll build
+description: "Run Hakyll 'site build' command"
+inputs:
+  image-tag:
+    required: true
+    description: Build image tag (output of publish-build job)
+    type: string
+runs:
+  using: docker
+  image: ${{ inputs.image-tag }}
+  args:
+    - build
