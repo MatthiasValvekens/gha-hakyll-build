@@ -8,6 +8,7 @@ WORKDIR /opt/build
 
 # Libgmp is linked dynamically, so we have to be careful to consistently version things
 RUN apt-get update && apt-get download libgmp10 \
+        && apt-get install -y pkg-config \
         && mv libgmp*.deb libgmp.deb && rm -rf /var/lib/apt/lists/*
 
 # The idea is that we only invalidate the dependency layer if the lock file changes
