@@ -75,5 +75,7 @@ jobs:
           push: true
           tags: ${{ needs.builder-image-meta.outputs.tags }}
           labels: ${{ needs.builder-image-meta.outputs.labels }}
+          cache-to: type=gha,mode=max
+          cache-from: type=gha
           build-args: |
             GHC_VERSION=${{ inputs.ghc-version }}

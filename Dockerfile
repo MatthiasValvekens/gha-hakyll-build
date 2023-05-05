@@ -1,4 +1,3 @@
-# TODO upgrade lock files
 ARG GHC_VERSION
 # Setup from
 # https://timwspence.github.io/blog/posts/2019-08-02-optimized-docker-builds-for-haskell-stack.html
