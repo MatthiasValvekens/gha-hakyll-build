@@ -1,7 +1,7 @@
-ARG GHC_VERSION
+ARG BASE_VERSION
 # Setup from
 # https://timwspence.github.io/blog/posts/2019-08-02-optimized-docker-builds-for-haskell-stack.html
-FROM haskell:$GHC_VERSION-slim as dependencies
+FROM haskell:$BASE_VERSION as dependencies
 
 RUN mkdir /opt/build
 WORKDIR /opt/build
@@ -16,7 +16,7 @@ COPY stack.yaml *.cabal stack.yaml.lock /opt/build/
 RUN stack build --system-ghc --dependencies-only
 
 
-FROM haskell:$GHC_VERSION-slim as build
+FROM haskell:$BASE_VERSION as build
 
 RUN apt-get update && apt-get install -y zip && rm -rf /var/lib/apt/lists/*
 

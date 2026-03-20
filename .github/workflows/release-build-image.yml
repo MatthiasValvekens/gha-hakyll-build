@@ -2,9 +2,9 @@ name: Publish site builder image
 on:
   workflow_call:
     inputs:
-      ghc-version:
+      haskell-base-image-version:
         type: string
-        description: GHC version
+        description: version of haskell base image to use
         required: true
       dest-image-suffix:
         type: string
@@ -78,4 +78,4 @@ jobs:
           cache-to: type=gha,mode=max
           cache-from: type=gha
           build-args: |
-            GHC_VERSION=${{ inputs.ghc-version }}
+            BASE_VERSION=${{ inputs.haskell-base-image-version }}
